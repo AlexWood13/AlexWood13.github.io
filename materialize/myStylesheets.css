@@ -8,4 +8,11 @@
     flex: 1 0 auto;
   }
   
+/* parallax container */
+
+.parallax-container {
+  max-height: 200px;
+  max-width: auto;
+  background: transparent;
+}
 
