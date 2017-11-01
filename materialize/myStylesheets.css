@@ -1,4 +1,4 @@
-  /* parallax container */ 
+  /* parallax container */
 body {
     display: flex;
     min-height: 100vh;
@@ -8,14 +8,14 @@ body {
   main {
     flex: 1 0 auto;
   }
-  
+
 /* parallax container */
 
 .parallax-container {
-  max-height: 400px;
+  max-height: 600px;
   max-width: auto;
   background: transparent;
 }
 
 .cardtext {
-  color: amber; }
+  color: #ffb300; }
