@@ -1,4 +1,5 @@
-  body {
+  /* parallax container */ 
+body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
@@ -11,7 +12,7 @@
 /* parallax container */
 
 .parallax-container {
-  max-height: 200px;
+  max-height: 500px;
   max-width: auto;
   background: transparent;
 }
