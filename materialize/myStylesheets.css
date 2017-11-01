@@ -16,6 +16,12 @@ body {
   max-width: auto;
   background: transparent;
 }
-
+/* text colour */
 .cardtext {
-  color: #ffb300; }
+  color: #ffb300;
+}
+
+/* form text colour  */
+.formtext {
+  color: #000000;
+}
