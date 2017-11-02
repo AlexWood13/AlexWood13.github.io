@@ -25,12 +25,16 @@
 
             <!-- navbar -->
             <nav>
+              <!-- link to top -->
+            <a id="top"> </a>
+            
+            <!-- brand logo -->
               <div class="nav-wrapper blue-grey">
            <a href="#" class="brand-logo">AJLeague</a>
+
            <!-- mobile menu -->
            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 <ul class="right hide-on-med-and-down">
-
 
               <!-- buttons -->
               <ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -65,7 +69,7 @@
   <!-- parallax text  -->
   <div class="section blue-grey">
     <div class="row container">
-  <h2 class="header">Parallax</h2>
+        <h2 class="header">Parallax</h2>
       <p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.</p>
     </div>
   </div>
@@ -76,17 +80,25 @@
   </div>
 
   <!-- parallax text -->
-  <div class="section blue-grey">
-  <div class="row container">
-    <h2 class="header">Parallax</h2>
+<div class="section blue-grey">
+    <div class="row container">
+      <h2 class="header">Parallax</h2>
         <p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.</p>
-  </div>
-  </div>
+    </div>
+</div>
 
   <!-- parallax image -->
   <div class="parallax-container">
     <div class="parallax"><img class="responsive-img" src="assets/plaxImg2.jpg" /></div>
   </div>
+
+  <!-- back to top link  -->
+  <div class="section blue-grey">
+    <div class="center">
+  <a href="#top" class="waves-effect waves-light btn  blue-grey darken-4">Back to top</a>
+   </div>
+
+ </div>
 
 <!-- main ending -->
 </main>
@@ -95,7 +107,7 @@
 <!-- footer -->
 <footer>
 <div class="section blue-grey darken-4">
-      <footer class="page-footer  blue-grey">
+      <footer class="page-footer blue-grey">
         <div class="container">
           <div class="row">
             <div class="col l6 s12">
@@ -105,10 +117,10 @@
             <div class="col l4 offset-l2 s12">
               <h5 class="white-text">External Links</h5>
               <ul>
-                <li><a class="grey-text text-lighten-3" href="#!">Youtube</a></li>
-                <li><a class="grey-text text-lighten-3" href="#!">Twitter</a></li>
-                <li><a class="grey-text text-lighten-3" href="#!">Twitch</a></li>
-                <li><a class="grey-text text-lighten-3" href="#!">Plays.TV</a></li>
+                <li><a href="http:www.youtube.com"><img src="assets/youtube.jpg">Youtube</a> </li>
+                <li><a class="grey-text text-lighten-3" href="#!"><img src="assets/twitter.jpg"> Twitter</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!"><img src="assets/twitch.jpg"> Twitch</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!"><img src="assets/playsTv.jpg"> Plays.TV</a></li>
               </ul>
             </div>
           </div>
@@ -118,17 +130,56 @@
         <div class="footer-copyright">
           <div class="container">
           © 2014 Copyright Text
-        </div>
 
-          <div class="col l4 offset-12 s12">
-          <h5 class="white-text">Contact us</h5>
+
+<!-- modal in progress -->
+          <div class="right">
+
+          <!-- Modal Trigger -->
+<a class="waves-effect waves-light btn modal-trigger blue-grey darken-4" href="#modal1">Contact Us</a>
+
+<!-- Modal Structure -->
+
+<div id="modal1" class="modal">
+  <div class="modal-content">
+    <h4>Modal Header</h4>
+    <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+          <i class="material-icons prefix">account_circle</i>
+          <input id="icon_prefix" type="text" class="formtext validate">
+          <label for="icon_prefix">Username</label>
         </div>
+        <div class="input-field col s6">
+          <i class="material-icons prefix">email</i>
+          <input id="icon_prefix" type="text" class="formtext validate">
+          <label for="icon_prefix">email</label>
         </div>
+      </div>
+      <!-- text area -->
+      <div class="row">
+       <form class="col s12">
+         <div class="row">
+           <div class="input-field col s12">
+               <i class="material-icons prefix">edit</i>
+               <input id="icon_prefix" type="text" class="formtext validate">
+             <label for="textarea1">Issue</label>
+           </div>
+         </div>
+       </form>
+     </div>
+     <!-- submit button + cancel  -->
+        </div>
+        <div class="modal-footer">
+          <button class="btn waves-effect waves-light blue-grey darken-4" type="submit" name="action">Submit
+          <i class="material-icons right">send</i>
+        </button>
+     <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
+   </div>
+ </div>
       </footer>
 <!-- end of footer -->
-
-
-
 
   </body>
 </html>
