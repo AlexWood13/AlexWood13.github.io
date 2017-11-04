@@ -16,9 +16,14 @@ body {
   max-width: auto;
   background: transparent;
 }
-/* text colour */
+/* card revealed text colour */
 .cardtext {
   color: #ffb300;
+}
+
+/* card link text colour */
+.linktext {
+  color: #ffffff;
 }
 
 /* form text colour  */
