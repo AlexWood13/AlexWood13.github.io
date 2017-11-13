@@ -18,3 +18,8 @@ $(document).ready(function(){
 //text form
 $('#textarea1').val('New Text');
 $('#textarea1').trigger('autoresize');
+
+//carousel
+$(document).ready(function(){
+  $('.carousel').carousel();
+});
