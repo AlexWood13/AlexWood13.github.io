@@ -12,7 +12,7 @@ body {
 /* parallax container */
 
 .parallax-container {
-  max-height: 400px;
+  max-height: 500px;
   max-width: auto;
   background: transparent;
 }
