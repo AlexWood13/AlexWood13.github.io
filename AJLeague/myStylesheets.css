@@ -1,0 +1,32 @@
+  /* parallax container */
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+
+/* parallax container */
+
+.parallax-container {
+  max-height: 500px;
+  max-width: auto;
+  background: transparent;
+}
+/* card revealed text colour */
+.cardtext {
+  color: #ffb300;
+}
+
+/* card link text colour */
+.linktext {
+  color: #ffffff;
+}
+
+/* form text colour  */
+.formtext {
+  color: #000000;
+}
