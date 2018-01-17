@@ -158,7 +158,6 @@
        </div>
      </div>
 
-
 <!-- background colour -->
 <div class="section blue-grey">
 
@@ -178,19 +177,66 @@
 <div class="center amber-text darken-1">  <H5> What do you guys think? </H5> </div>
 </div>
 
+
 <!-- comment section -->
+
 <div class="section blue-grey">
 <div class="row">
    <form class="col s12">
      <div class="row">
        <div class="input-field col s12">
-         <textarea id="textarea1" class="materialize-textarea"></textarea>
-         <label for="textarea1">Comment</label>
+         <!-- modal -->
+         <div class="right">
+         <a class="waves-effect waves-light btn modal-trigger blue-grey darken-4" href="#modal4">Delete</a>
+       </div>
+         <!-- edit modal -->
+         <div class="right">
+         <a class="waves-effect waves-light btn modal-trigger blue-grey darken-4" href="#modal4">Edit</a>
+       </div>
+         <textarea id="textarea2" class="materialize-textarea"></textarea>
+         <label for="textarea2">Comment</label>
+
+          <!-- Modal Structure -->
+
+          <div id="modal4" class="modal">
+
+               <!-- submit button + cancel  -->
+
+                  <div class="modal-footer">
+                    <div class="center">
+                    <button class="btn waves-effect waves-light blue-grey darken-4" type="submit" name="action">one
+                  </button>
+               <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">one</a>
+             </div>
+           </div>
+         </div>
+         </div>
+       </div>
+
+          <!-- edit Modal Structure -->
+
+          <div id="modal5" class="modal">
+
+               <!-- edit text area  -->
+
+                  <div class="modal-footer">
+                    <div class="center">
+                    <button class="btn waves-effect waves-light blue-grey darken-4" type="submit" name="action">two
+                  </button>
+               <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">one</a>
+             </div>
+           </div>
+         </div>
+         </div>
+
+
        </div>
      </div>
    </form>
  </div>
 </div>
+
+
 
 
 
