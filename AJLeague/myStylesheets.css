@@ -1,64 +1,97 @@
-  /* parallax container */
+/* parallax container */
 body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-  }
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
 
-  main {
-    flex: 1 0 auto;
-  }
+main {
+  flex: 1 0 auto;
+}
 
 /* parallax container */
 
 .parallax-container {
-  max-height: 500px;
-  max-width: auto;
-  background: transparent;
+max-height: 500px;
+max-width: auto;
+background: transparent;
 }
 /* card revealed text colour */
 .cardtext {
-  color: #ffb300;
+color: #ffb300;
 }
 
 /* card link text colour */
 .linktext {
-  color: #ffffff;
+color: #ffffff;
 }
 
 /* form text colour  */
 .formtext {
-  color: #000000;
+color: #000000;
 }
 
 
 /* video background
 body, html {
-  margin: 0;
-  padding: 0;
+margin: 0;
+padding: 0;
 }
 
 video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-    z-index: 1;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+min-width: 100%;
+min-height: 100%;
+width: auto;
+height: auto;
+  z-index: 1;
 
 }
 
 .text {
-  color: blue;
-  z-index: 2;
-  position: absolute;
-  background: rgba(0,0,0,0.4);
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+color: blue;
+z-index: 2;
+position: absolute;
+background: rgba(0,0,0,0.4);
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
 }
 */
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+/* Flaired edges, by Tomas Theunissen */
+
+/* Flaired edges, by Tomas Theunissen */
+
+hr {
+  overflow: visible; /* For IE */
+  height: 30px;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px 0 0 0;
+  border-radius: 20px;
+}
+hr:before { /* Not really supposed to work, but does */
+  display: block;
+  content: "";
+  height: 30px;
+  margin-top: -31px;
+  border-style: solid;
+  border-color: black;
+  border-width: 0 0 1px 0;
+  border-radius: 20px;
+}
