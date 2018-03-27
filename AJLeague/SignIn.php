@@ -112,7 +112,7 @@
 
 	 <!--  parallax image -->
   <div class="parallax-container">
-    <div class="parallax"><img class="responsive-img" src="assets/parallaxImg.jpg"/></div>
+    <div class="parallax"><img class="responsive-img" src="assets/plaxImg2.jpg"/></div>
   </div>
 
 		</main>
