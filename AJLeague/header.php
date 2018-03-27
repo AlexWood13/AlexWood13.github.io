@@ -26,9 +26,9 @@
 
             <!-- mobile menu -->
            <ul class="side-nav" id="mobile-demo">
-  <li><a href="champions.html">Champions</a></li>
-  <li><a href="Tactics.html">Tactics and Strategy</a></li>
-  <li><a href="discussion.html">Discussion</a></li>
+  <li><a href="champions.php">Champions</a></li>
+  <li><a href="Tactics.php">Tactics and Strategy</a></li>
+  <li><a href="discussion.php">Discussion</a></li>
   </ul>
          </nav>
 
