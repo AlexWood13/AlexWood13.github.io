@@ -8,6 +8,7 @@ include("header.php");
 
 <html>
 <head>
+	<title> Admin Blog </title>
 
 	 <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -19,7 +20,6 @@ include("header.php");
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-	<title> Blog </title>
 </head>
 <body>
 	    <!--Import jQuery before materialize.js-->
@@ -86,8 +86,8 @@ include("header.php");
 
 	<!-- post button and dashboard link -->
 	<div class="center">
-    <a href="post.php" class="waves-effect waves-light btn blue-grey darken-4">Post</a>
-	<a href="dashboard.php" class="waves-effect waves-light btn blue-grey darken-4">Return to Dashboard</a>
+    <a href="adminpost.php" class="waves-effect waves-light btn blue-grey darken-4">Admin Post</a>
+	<a href="admindashboard.php" class="waves-effect waves-light btn blue-grey darken-4">Return to Admin Dashboard</a>
 	</div>
 
 

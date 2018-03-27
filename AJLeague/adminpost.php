@@ -79,8 +79,8 @@ include("header.php");
 
 	<!-- links to blog and dashboard pages -->
 	<div class="container" align="center">
-		<a href="blog.php" class="waves-effect waves-light btn blue-grey darken-4">Return to Blog</a>
-		<a href="dashboard.php" class="waves-effect waves-light btn blue-grey darken-4">Return to Dashboard</a>
+		<a href="adminblog.php" class="waves-effect waves-light btn blue-grey darken-4">Return to Admin Blog</a>
+		<a href="admindashboard.php" class="waves-effect waves-light btn blue-grey darken-4">Return to Admin Dashboard</a>
 	</div>
 
 	<!-- parallax image -->

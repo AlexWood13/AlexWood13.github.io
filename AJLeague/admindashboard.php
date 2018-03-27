@@ -14,10 +14,12 @@ return $row;
 
 //update function
 function updateUser($conn, $login_admin) {
-	//escape string to stop SQL injections/stop the user from entering in their own tags and code
-$myusername = mysqli_real_escape_string($conn,$_POST["username"]);
-$mypassword = mysqli_real_escape_string($conn,$_POST["password"]);
-	//update admin table (username and password) where the adminID matches the logged in admin
+
+//escape string to stop SQL injections/stop the user from entering in their own tags and code and username and password assignned to the two txt boxes on the page.
+$myusername = mysqli_real_escape_string($conn,$_POST["txtusername"]);
+$mypassword = mysqli_real_escape_string($conn,$_POST["txtpassword"]);
+
+//update admin table (username and password) where the adminID matches the logged in admin
 $sql = "UPDATE admin SET username = '$myusername', password = '$mypassword' WHERE adminID = '$_SESSION[login_admin]' ";
 
 	//if sql code runs return info that the admin has been updated successfully, else return the error message.

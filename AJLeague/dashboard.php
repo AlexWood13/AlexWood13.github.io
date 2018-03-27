@@ -17,7 +17,8 @@ return $row;
 
 //update function
 function updateUser($conn, $login_user) {
-//declarations
+
+////username, password and email assignned to the two txt boxes on the page.
 $myusername = mysqli_real_escape_string($conn,$_POST["txtUsername"]);
 $mypassword = mysqli_real_escape_string($conn,$_POST["txtPassword"]);
 $myemail = mysqli_real_escape_string($conn,$_POST["txtEmail"]);

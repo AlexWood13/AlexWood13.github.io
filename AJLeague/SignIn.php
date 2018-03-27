@@ -9,7 +9,7 @@
 	  //send post request to check if form submission was correctly done.
    if($_SERVER["REQUEST_METHOD"] == "POST") {
 
-	   // username and password sent from form, assignned to the two txt boxes on the page.
+	   //username and password assignned to the two txt boxes on the page.
       $myusername = mysqli_real_escape_string($conn,$_POST["txtUsername"]);
       $mypassword = mysqli_real_escape_string($conn,$_POST["txtPassword"]);
 
@@ -41,6 +41,7 @@
 <!-- html -->
 <html>
   <head>
+	  	<title> Sign In </title>
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->

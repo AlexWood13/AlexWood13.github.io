@@ -7,6 +7,7 @@ include("header.php");
 
 <html>
 <head>
+	<title> Admin Review </title>
 
 	 <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -18,7 +19,6 @@ include("header.php");
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-	<title> Admin Review </title>
 </head>
 
 <body>
@@ -85,8 +85,15 @@ include("header.php");
 
 	</div>
 		  </div>
-    <br />
-
+   	    <br />
+		<br />
+		<br />
+ 		<br />
+ 		<br />
+ 		<br />
+ 		<br />
+ 		<br />
+	    <br />
 
 	<!-- section colour end -->
 	</div>

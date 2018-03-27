@@ -13,7 +13,7 @@
    if($_SERVER["REQUEST_METHOD"] == "POST") {
       // username and password sent from form
 
-	   //user enters username and password
+	   ////username and password assignned to the two txt boxes on the page.
       $myusername = mysqli_real_escape_string($conn,$_POST["txtusername"]);
       $mypassword = mysqli_real_escape_string($conn,$_POST["txtpassword"]);
 
@@ -26,7 +26,6 @@
       $count = mysqli_num_rows($result);
 
       // If result matched $myusername and $mypassword, the count will = 1 allowing them to log in as an admin.
-
       if($count == 1) {
          $_SESSION["login_admin"] = $row["adminID"];
 
@@ -34,7 +33,7 @@
          header("location: admindashboard.php");
       }else {
 		  //display error message
-         $info = "Your Login Name or Password is invalid";
+         $info = "Your Admin Login Name or Password is invalid";
       }
    }
    //close the connection
@@ -44,6 +43,8 @@
 <!-- html -->
 <html>
   <head>
+
+	  <title> Admin Sign In </title>
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
@@ -85,7 +86,7 @@
                   <div class="row">
                     <div class="input-field">
                       <i class="material-icons prefix">account_circle</i>
-                      <input name="txtUsername" type="text" class="formtext validate">
+                      <input name="txtusername" type="text" class="formtext validate">
                       <label for="icon_prefix">Username</label>
                     </div>
                   </div>
@@ -94,14 +95,14 @@
                   <div class="row">
                     <div class="input-field">
                       <i class="material-icons prefix">security</i>
-                      <input name="txtPassword" type="password" class="formtext validate">
+                      <input name="txtpassword" type="password" class="formtext validate">
                       <label for="icon_prefix">Password</label>
                     </div>
                   </div>
 
                  <!-- submit button + cancel  -->
                     <div class="modal-footer">
-                      <button class="btn waves-effect waves-light blue-grey darken-4" type="submit" name="">Submit
+                      <button class="btn waves-effect waves-light blue-grey darken-4" type="submit" name="action">Submit
                     </button>
                  <a href="index.php" class="modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
                </div>
