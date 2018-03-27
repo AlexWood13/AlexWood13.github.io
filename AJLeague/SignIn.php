@@ -96,14 +96,19 @@
 
                  <!-- submit button + cancel  -->
                     <div class="modal-footer">
-                      <button class="btn waves-effect waves-light blue-grey darken-4" type="submit" name="action">Submit
+                      <button class="btn waves-effect waves-light blue-grey darken-4" type="submit" name="">Submit
                     </button>
                  <a href="index.php" class="modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
                </div>
             </form>
+				<!-- echo  error message -->
+				<?php echo $info
+	   ?>
 	</div>
 
-      -
+	<br />
+	<br />
+	<br />
 
 	 <!--  parallax image -->
   <div class="parallax-container">

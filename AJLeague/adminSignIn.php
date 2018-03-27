@@ -9,7 +9,6 @@
    //setting the info variable = to nothing, so I can input data.
    $info = "";
 
-
    //send post request to check if form submission was correctly done.
    if($_SERVER["REQUEST_METHOD"] == "POST") {
       // username and password sent from form
@@ -23,7 +22,6 @@
       $result = mysqli_query($conn,$sql);
       $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
       $active = $row["active"];
-
 
       $count = mysqli_num_rows($result);
 
@@ -66,58 +64,28 @@
 
           <!--header -->
           <header>
-
-            <!-- navbar -->
-            <nav>
-              <!-- link to top -->
-            <a id="top"> </a>
-
-            <!-- brand logo -->
-              <div class="nav-wrapper blue-grey darken-2">
-           <a href="index.php" class="brand-logo"><img src="assets/logo3.jpg" width="200" height="64"></a>
-
-           <!-- mobile menu -->
-           <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-<ul class="right hide-on-med-and-down">
-
-              <!-- buttons -->
-              <ul id="nav-mobile" class="right hide-on-med-and-down">
-				  <li><a href="SignUp.php" class="waves-effect waves-light btn blue-grey darken-4">Sign Up </a></li>
-             <li><a href="index.php" class="waves-effect waves-light btn blue-grey darken-4">Home</a></li>
-             <li><a href="champions.php"class="waves-effect waves-light btn blue-grey darken-4">Champions</a></li>
-             <li><a href="Tactics.php"class="waves-effect waves-light btn blue-grey darken-4">Tactics and Strategy</a></li>
-           </ul>
-         </div>
-                    <!-- mobile menu -->
-                   <ul class="side-nav" id="mobile-demo">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="champions.html">Champions</a></li>
-          <li><a href="Tactics.html">Tactics and Strategy</a></li>
-          </ul>
-          </div>
-                 </nav>
-                  <!-- end of navar -->
-
+		<?php include ("header.php")
+	   ?>
+			  <?php include ("log.php")
+	   ?>
 
       <!-- header-->
       </header>
 
 <!-- main-->
 <main>
-           <!-- sign up -->
 
-           <!-- Modal Trigger -->
+           <!-- div container for form  -->
             <div class="container" align="center">
 
-            <!-- Modal Structure -->
-
+            <!-- form structure -->
                 <form class="" method="post">
 
                  <!-- Username -->
                   <div class="row">
                     <div class="input-field">
                       <i class="material-icons prefix">account_circle</i>
-                      <input name="txtusername" type="text" class="formtext validate">
+                      <input name="txtUsername" type="text" class="formtext validate">
                       <label for="icon_prefix">Username</label>
                     </div>
                   </div>
@@ -126,27 +94,22 @@
                   <div class="row">
                     <div class="input-field">
                       <i class="material-icons prefix">security</i>
-                      <input name="txtpassword" type="password" class="formtext validate">
+                      <input name="txtPassword" type="password" class="formtext validate">
                       <label for="icon_prefix">Password</label>
                     </div>
                   </div>
 
                  <!-- submit button + cancel  -->
                     <div class="modal-footer">
-                      <button class="btn waves-effect waves-light blue-grey darken-4" type="submit" name="action">Submit
+                      <button class="btn waves-effect waves-light blue-grey darken-4" type="submit" name="">Submit
                     </button>
                  <a href="index.php" class="modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
                </div>
             </form>
-            </div
-         </div>
-       </div>
-
-	<div class ="center">
-	<?php
-		echo $info;
-	?>
-		</div>
+				<!-- echo  error message -->
+				<?php echo $info
+	   ?>
+	</div>
 
 	<br />
 	<br />
