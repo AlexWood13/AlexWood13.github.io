@@ -1,7 +1,6 @@
 <?php
-//include session
-include("session.php");
-
+//admin session to check that they logged into an admin account.
+include("adminsession.php");
 //include header
 include("header.php");
 ?>
@@ -19,8 +18,9 @@ include("header.php");
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-	<title> Blog </title>
+	<title> Admin Review </title>
 </head>
+
 <body>
 	    <!--Import jQuery before materialize.js-->
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
@@ -30,22 +30,25 @@ include("header.php");
 	<!-- section colour -->
 	  <div class="section amber darken-2">
 
-		  <!-- logout button -->
+		  <!-- logout button + dashboard button -->
 <div class="container center">
 	<a href="logout.php" class="waves-effect waves-light btn blue-grey darken-4">Logout</a>
+	<a href="admindashboard.php" class="waves-effect waves-light btn blue-grey darken-4">Return to Admin Dashboard</a>
 </div>
 
 	<div class="container">
 	<div class="row col m12 center">
 
 
-		<!-- PHP -->
       <?php
 
 		//selecting data from the blog data table and inner join
-       $sql = "SELECT blog.title, blog.content, blog.date, user.Username FROM blog
-	   INNER JOIN user ON user.UserID = blog.UserID
-	   ORDER BY id DESC";
+       $sql = "SELECT contact.issue, contact.date, admin.adminID, user.Username, user.UserID
+	   FROM contact INNER JOIN admin
+	   ON admin.adminID = contact.adminID
+	   INNER JOIN user
+	   ON user.UserID = contact.UserID
+	   ORDER BY adminID DESC";
 
 		//checking connnection
         $res = mysqli_query($conn, $sql) or die(mysqli_error($conn));
@@ -53,20 +56,20 @@ include("header.php");
 		//declaring posts
 		 $posts = "";
 
-		//if there is a row, fetch data
+		//if there is a row in the data base, return the values
         if (mysqli_num_rows($res) > 0) {
             while($row = mysqli_fetch_assoc($res)) {
+			    $userid = $row['UserID'];
 				$username = $row['Username'];
-                $title = $row['title'];
-                $content = $row['content'];
+                $issue = $row['issue'];
                 $date = $row['date'];
+				$adminid = $row['adminID'];
 
 			//tag checks/validation
-			$output = htmlspecialchars($content);
-			$outputT = htmlspecialchars($title);
+			$output = htmlspecialchars($issue);
 
-				//data format
-                $posts .= "<div><h4>Username: $username</h4><u><h2>Title: $outputT</h2></u><p>$output</p><h5>Date: $date</h5>
+				//data format to go on page
+                $posts .= "<div><h3>User: $username</h3><h3>ID: $userid</h3><p>Issue: $output</p><h5>Date: $date</h5><h5>Admin ID: $adminid</h5>
 				<hr class=\"style-seven\">
 				</div>";
             }
@@ -75,7 +78,7 @@ include("header.php");
         } else
 
 		{
-			//if there is no data, display this message.
+			//if there are no posts, echo this message.
             echo "There are no results to display!";
         }
       ?>
@@ -83,12 +86,6 @@ include("header.php");
 	</div>
 		  </div>
     <br />
-
-	<!-- post button and dashboard link -->
-	<div class="center">
-    <a href="post.php" class="waves-effect waves-light btn blue-grey darken-4">Post</a>
-	<a href="dashboard.php" class="waves-effect waves-light btn blue-grey darken-4">Return to Dashboard</a>
-	</div>
 
 
 	<!-- section colour end -->
@@ -99,7 +96,6 @@ include("header.php");
     <div class="parallax"> <img class="responsive-img" src="assets/plaxImg2.jpg"/></div>
   </div>
 
-	<!-- including footer -->
 	<?php
 		include("footer.php");
 	?>

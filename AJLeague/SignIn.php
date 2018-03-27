@@ -1,34 +1,39 @@
 <!-- database -->
 <?php
    include('config.php');
+	//starting session
    session_start();
+	//setting info variable
    $info = "";
 
+	  //send post request to check if form submission was correctly done.
    if($_SERVER["REQUEST_METHOD"] == "POST") {
-      // username and password sent from form
 
-
+	   // username and password sent from form, assignned to the two txt boxes on the page.
       $myusername = mysqli_real_escape_string($conn,$_POST["txtUsername"]);
       $mypassword = mysqli_real_escape_string($conn,$_POST["txtPassword"]);
 
+	   //select data rows from user table
       $sql = "SELECT userID FROM user WHERE username = '$myusername' and password = '$mypassword'";
       $result = mysqli_query($conn,$sql);
       $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
       $active = $row["active"];
 
+	   //if there is a result add 1 to count
       $count = mysqli_num_rows($result);
 
-      // If result matched $myusername and $mypassword, table row must be 1 row
-
+      // If result matched $myusername and $mypassword, count goes up  by 1, allowing user to log in
       if($count == 1) {
          $_SESSION["login_user"] = $row["userID"];
 
+		  //redirect to dashboard once the log in
          header("location: dashboard.php");
       }else {
+		  //setting a string to $info
          $info = "Your Login Name or Password is invalid";
-		  echo $info;
       }
    }
+	//close connection
    mysqli_close($conn);
 ?>
 
@@ -62,16 +67,13 @@
 
 	?>
 
-
 <!-- main-->
 <main>
-           <!-- sign up -->
 
-           <!-- Modal Trigger -->
+           <!-- div container for form  -->
             <div class="container" align="center">
 
-            <!-- Modal Structure -->
-
+            <!-- form structure -->
                 <form class="" method="post">
 
                  <!-- Username -->

@@ -1,70 +1,43 @@
 <?php
 
-include('session.php');
+//admin only pages
+include('adminsession.php');
 
-//displaying user info
-function displayUser($conn, $login_user) {
-
-//select from user database and return data
-$sql = "SELECT userID, Username, Password, Email FROM user
-WHERE userID = '$login_user' ";
-
-//if there is a result, fetch and return the row
+//select from admin database and return data
+function displayUser($conn, $login_admin) {
+$sql = "SELECT username, password FROM admin
+WHERE adminID = '$login_admin' ";
 $result = mysqli_query($conn,$sql);
 $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
 return $row;
 }
 
 //update function
-function updateUser($conn, $login_user) {
-//declarations
-$myusername = mysqli_real_escape_string($conn,$_POST["txtUsername"]);
-$mypassword = mysqli_real_escape_string($conn,$_POST["txtPassword"]);
-$myemail = mysqli_real_escape_string($conn,$_POST["txtEmail"]);
+function updateUser($conn, $login_admin) {
+	//escape string to stop SQL injections/stop the user from entering in their own tags and code
+$myusername = mysqli_real_escape_string($conn,$_POST["username"]);
+$mypassword = mysqli_real_escape_string($conn,$_POST["password"]);
+	//update admin table (username and password) where the adminID matches the logged in admin
+$sql = "UPDATE admin SET username = '$myusername', password = '$mypassword' WHERE adminID = '$_SESSION[login_admin]' ";
 
-//update data in user table where the UserID matches the logged in UserID
-$sql = "UPDATE user SET Username = '$myusername', Password = '$mypassword', Email =
-'$myemail' WHERE userID = '$_SESSION[login_user]' ";
-
-//if it connects, run the sql
+	//if sql code runs return info that the admin has been updated successfully, else return the error message.
 if (mysqli_query($conn, $sql)) {
-
-//return message when updated
-$info = "Updated User successfully ";
+$info = "Updated Admin user successfully ";
 }
 else {
-
-//return error message
 $info = "Error updating User: ". mysqli_error($conn);
 }
 return $info;
 }
 
-//delete function
-function deleteUser($conn, $login_user) {
-$sql = "DELETE FROM user WHERE user.UserID=" . $_SESSION[login_user] . " ";
-if (mysqli_query($conn, $sql, $sql2)) {
-	  header("location:SignIn.php");
-} else {
-$info = "Error deleting User: " . mysqli_error($conn);
-}
-return $info;
-}
-
-//update button
+//update linked to submit button
 if(isset($_POST["update"])){
-$info = updateUser($conn, $_SESSION["login_user"]);
+	//connected to the updateUser function if they are logged in as an admin.
+$info = updateUser($conn, $_SESSION["login_admin"]);
 }
 
-//delete button
-else if (isset($_POST["delete"])){
-
-//connnected to function by deleteUser
-$info = deleteUser($conn, $_SESSION["login_user"]);
-}
-
-//displaying the data from the table of the logged in user
-$row = displayUser($conn, $_SESSION["login_user"]);
+//displaying admin data
+$row = displayUser($conn, $_SESSION["login_admin"]);
 
 //closing the connection
 mysqli_close($conn);
@@ -81,10 +54,9 @@ mysqli_close($conn);
 
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Dashboard</title>
+  <title>Admin Dashboard</title>
 
 	</head>
-
 
   <body>
 
@@ -111,10 +83,10 @@ mysqli_close($conn);
 
               <!-- buttons -->
               <ul id="nav-mobile" class="right hide-on-med-and-down">
-				  <li><a href="blog.php" class="waves-effect waves-light btn blue-grey darken-4">Blog</a></li>
+				  <li><a href="adminblog.php" class="waves-effect waves-light btn blue-grey darken-4">Blog</a></li>
              <li><a href="champions.php"class="waves-effect waves-light btn blue-grey darken-4">Champions</a></li>
              <li><a href="Tactics.php"class="waves-effect waves-light btn blue-grey darken-4">Tactics and Strategy</a></li>
-			 <li><a href="contact.php"class="waves-effect waves-light btn blue-grey darken-4">Contact Us</a></li>
+			 <li><a href="adminreview.php"class="waves-effect waves-light btn blue-grey darken-4">Admin Review</a></li>
            </ul>
          </div>
                     <!-- mobile menu -->
@@ -127,25 +99,24 @@ mysqli_close($conn);
                  </nav>
                   <!-- end of navar -->
 
-
       <!-- header-->
       </header>
+<br />
 
-<div class="container">
+<div class="container center">
 
-<!-- Returned data from user table connected by names -->
+<!-- layout -->
 <form action = "" method = "post">
-<label>Username :</label><input type = "text" name = "txtUsername" value = "<?php
-echo $row["Username"]?>" class = "box"/><br /><br />
-<label>Password :</label><input type = "text" name = "txtPassword" value = "<?php
-echo $row["Password"]?>" class = "box"/><br /><br />
-<label>Email :</label><input type = "text" name = "txtEmail" value = "<?php
-echo $row["Email"]?>" class = "box"/><br /><br />
+<label>Username :</label><input type = "text" name = "txtusername" value = "<?php
+echo $row["username"]?>" class = "box"/><br /><br />
+<label>Password :</label><input type = "text" name = "txtpassword" value = "<?php
+echo $row["password"]?>" class = "box"/><br /><br />
+
 
 	<!-- update button -->
 <button type="submit" name="update">Update</button>
-	<!-- delete button -->
-<button type="submit" name="delete">Delete</button>
+
+<!-- end of form -->
 </form>
 
 	<!-- logout button -->

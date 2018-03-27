@@ -1,6 +1,6 @@
 <?php
 
-	include_once("session.php");
+	include_once("adminsession.php");
 
 //if post button is pressed run this code.
 if(isset($_POST['post'])) {
