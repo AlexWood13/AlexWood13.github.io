@@ -86,7 +86,6 @@ include("header.php");
 
 	<!-- post button and dashboard link -->
 	<div class="center">
-    <a href="adminpost.php" class="waves-effect waves-light btn blue-grey darken-4">Admin Post</a>
 	<a href="admindashboard.php" class="waves-effect waves-light btn blue-grey darken-4">Return to Admin Dashboard</a>
 	</div>
 
